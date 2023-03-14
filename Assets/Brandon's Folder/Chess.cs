@@ -13,9 +13,9 @@ public class Chess : MonoBehaviour
     
     //Objects <-----INCOMPLETE
     //need to define moves that each piece can make
-    private Board board;
-    private Piece selectedPiece;
-    private Select selectedSquare;
+    //private Board board;
+    //private Piece selectedPiece;
+    //private Select selectedSquare;
     private bool playerTurn; //true = player 1 turn, false = player 2 turn
 
     void Start()
@@ -24,7 +24,7 @@ public class Chess : MonoBehaviour
     }
 
     private void InitializeBoard() {
-        board = new Board();
+    //    board = new Board();
     }
 
     private bool TurnFlipper() {
