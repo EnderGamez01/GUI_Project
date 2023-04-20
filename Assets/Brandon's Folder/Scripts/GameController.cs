@@ -36,34 +36,42 @@ public class GameController : MonoBehaviour {
         //Horizontal
         moveCount++;
         if(buttonList[0].text == playerSide && buttonList[1].text == playerSide && buttonList[2].text == playerSide) {
+            winner = true;
             GameOver();
         }
         if(buttonList[3].text == playerSide && buttonList[4].text == playerSide && buttonList[5].text == playerSide) {
+            winner = true;
             GameOver();
         }
         if(buttonList[6].text == playerSide && buttonList[7].text == playerSide && buttonList[8].text == playerSide) {
+            winner = true;
             GameOver();
         }
 
         //Vertical
         if(buttonList[0].text == playerSide && buttonList[3].text == playerSide && buttonList[6].text == playerSide) {
+            winner = true;
             GameOver();
         }
         if(buttonList[1].text == playerSide && buttonList[4].text == playerSide && buttonList[7].text == playerSide) {
+            winner = true;
             GameOver();
         }
         if(buttonList[2].text == playerSide && buttonList[5].text == playerSide && buttonList[8].text == playerSide) {
+            winner = true;
             GameOver();
         }
 
         //Diagonal
         if(buttonList[0].text == playerSide && buttonList[4].text == playerSide && buttonList[8].text == playerSide) {
+            winner = true;
             GameOver();
         }
         if(buttonList[2].text == playerSide && buttonList[4].text == playerSide && buttonList[6].text == playerSide) {
+            winner = true;
             GameOver();
         }
-        else if (winner == false && moveCount >= 9) {
+        else if (moveCount >= 9) {
             SetGameOverText("Draw");
         }
 
@@ -71,9 +79,10 @@ public class GameController : MonoBehaviour {
     }
 
     void GameOver() {
-        winner = true;
         SetBoardInteractable(false);
-        SetGameOverText(playerSide + " Wins!");
+        if (winner == true) {
+            SetGameOverText(playerSide + " Wins!");
+        }
     }
 
     void ChangeSides() {
